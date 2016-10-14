@@ -3,11 +3,11 @@
 - name: Node.js | Download Nodesource Install Script
   get_url:
     url: http://deb.nodesource.com/setup_{{ node_version }}
-    dest: /tmp/setup_6.x
+    dest: /tmp/setup_{{ node_version }}
     mode: 0777
 
 - name: Node.js | Install Nodesource
-  shell: bash /tmp/setup_6.x
+  shell: bash /tmp/setup_{{ node_version }}
 
 - name: Node.js | Install Node.js and npm
   apt: pkg=nodejs
